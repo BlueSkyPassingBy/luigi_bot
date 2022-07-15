@@ -20,14 +20,13 @@ defmodule Luigi do
 
   @impl Telegram.Bot
   def handle_update(
-    %{"message" => %{"text" => "capo", "chat" => %{"id" => chat_id}, "message_id" => message_id}},
+    %{"message" => %{"text" => "/menny@sir_luigi_bot", "chat" => %{"id" => chat_id}, "message_id" => message_id}},
     token) do
     # send msg
     Telegram.Api.request(token, "sendMessage",
       chat_id: chat_id,
-      reply_to_message_id: message_id,
+      text: "*Antepasto*\nLeft\n\n*Prato principal*\nLeft\n\n*Sobremesa*\nLeft",
       parse_mode: "MarkdownV2",
-      text: "cabaço"
     )
   end
 
